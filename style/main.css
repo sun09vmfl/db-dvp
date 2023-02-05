@@ -199,7 +199,6 @@ cursor: pointer;
     /* 공통된 타이틀 */
     .contents .title .en {font-size: 62px; letter-spacing: 10px; color:#5d6168; line-height: 1.1;}
     .contents .title p { font-size: 24px; margin-top: 15px;}
-
     /* 공통된 버튼 */
     .contents .more {display: inline-block; position: absolute; left: 0; bottom: 0; font-size: 22px; padding-bottom: 8px; color:#666}
     .contents .more::after {content:""; width: 70%; height: 4px; background-color:  #30b2e2;; position: absolute; bottom: 0; left:0; transition: all .3s;} 
@@ -254,3 +253,29 @@ cursor: pointer;
 @keyframes line{
     0%{left: -500px; opacity: 0;}
 }
+
+/* 타이틀 영어 애니메이션 */
+.motion .char {display: inline-block;
+animation: slide-up2 0.5s cubic-bezier(.5, 0, .5, 1) both;
+animation-delay: calc(70ms * var(--char-index));
+}
+
+@keyframes slide-up2 {
+0% {transform: translateY(30px); opacity: 0;}
+30% {transform: translateY(30px); opacity: 0;}
+}
+
+/* 타이틀 한글 애니메이션 */
+.motion .title p {animation: slide-up2; animation-duration: 1s;}
+
+/* 비디오 */
+.contents .video {height: 650px; padding:130px 0; margin-top: 150px; box-sizing: border-box;
+background: url(../img/video3.jpg) no-repeat center left 50% / cover; position: relative;}
+.contents .video.motion {background: url(../img/video3.jpg) no-repeat center left 20%/cover; transition: 1s; }
+.contents .video .inner:after {display: none;}
+.contents .video .inner {overflow: hidden;}
+.contents .video .inner .title {margin-top: 70px; color: #fff; float: left; }
+.contents .video .inner .title .en {color: #fff; font-size: 28px; letter-spacing: 8px;}
+.contents .video .inner .title p {font-size: 54px; font-weight: bold;}
+.contents .video .inner .more {color: #fff; bottom: 80px}
+.contents .video .inner .videoBox {float: right; position: relative; width: 690px; height: 391px;}  

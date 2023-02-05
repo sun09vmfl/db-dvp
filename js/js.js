@@ -63,4 +63,18 @@ $(function () {
     $(".slide2 #slick-slide-control13").text("화성동탄 3차 주상복합(C18BL)");
 });
 
-//
+// 스크롤 애니메이션 (scrolla.js)
+$(function() {
+    $('.animate').scrolla({
+        mobile:true, //모바일 버전시 활성화
+        onse:false, // 스크롤이 딱 한 번만 하고 싶을 때는 true
+    });
+});
+
+//스크롤 다운
+$(function() {
+    $('.scroll').on('click', function() {
+        let scrollBtn = $('#scroll').offset().top; //스크롤의 끝나는 지점으로 스크롤바 이동
+        $('html, body').animate({scrollTop: (scrollBtn)}, 400); // 그 위치로 부드럽겡
+    })
+})
